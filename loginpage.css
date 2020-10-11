@@ -1,0 +1,217 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@600&family=Noto+Sans&family=Open+Sans:wght@700&display=swap');
+*{
+    margin : 0;
+    padding : 0;
+    box-sizing: border-box;
+    border-radius: 6px;
+}
+body{
+    height: 100vh;
+    background: linear-gradient(135deg,rgb(74,13,143) 0%, rgb(168, 65, 216) 50%,rgba(250,42,143) 100%);
+    overflow:hidden;
+}
+ul{
+    float: right;
+    list-style-type: none;
+    margin-top: -180px;
+}
+ul li{
+    display: inline-block;
+    margin-right: 40px;
+}
+ul li a{
+    text-decoration: none;
+    color: rgb(255,255,255,0.5);
+    padding: 4px 0.2px;
+    transition: 1s ease;
+}
+ul li a:hover{
+    color: rgba(255,255,255,0.75);
+}
+ul li a.active{
+    border-bottom: 2px solid #cd99d4;
+    color: #fff;
+}
+ul li a.login{
+    border: 1px solid #fff;
+    border-radius: 3px;
+    background-color: white;
+    color: purple;
+}
+ul li a.login:hover{
+    background-color: white;
+    color: purple;
+}
+ul li a.active:hover{
+   border: 1px solid #fff;
+    border-radius: 3px;
+    background-color: white;
+    color: purple;
+}
+.container{
+    position: relative;
+    align-items : center;
+    text-align: center;
+    background-position: center;
+    width: 450px;
+    font-family: sans-serif;
+    background: linear-gradient(200deg,lightblue,lightgreen);
+    padding: 60px 40px; 
+    margin-left: 350px;
+    margin-top : -150px;
+
+}
+header{
+    font-size: 40px;
+    margin-bottom: 35px;
+    font-family: 'Montserrat', sans-serif;
+}
+.input-field, form .button{
+    margin : 20px;
+    position : relative;
+    height: 50px;
+    width: 100%;
+}
+.input-field input{
+    height : 100%;
+    width : 100%;
+    border: 1px solid silver;
+    padding-left: 15px;
+    outline : none;
+    font-size: 19px;
+    transition: .4s;
+}
+input:focus{
+    border : 1px solid #1DA1F2;
+}
+.input-field label{
+    left : 15px;
+    pointer-events: none;
+    color: grey;
+    font-size : 18px;
+    transition: .4s;
+}
+.input-field label, span.show{
+    position : absolute;
+    top : 50%;
+    transform : translateY(-50%);
+}
+
+input:focus ~ label,
+input:valid ~ label
+{
+    transform: translateY(-33px);
+    background: white;
+     font-size: 16px;
+    color : #1DA1F2;
+} 
+span.show{
+    right : 20px;
+    color: #111;
+    font-size: 18px;
+    cursor: pointer;
+    user-select: none;
+    visibility: hidden;
+}
+span i{
+    font-size: 35px;
+}
+input:valid ~ span.show{
+    visibility: visible;
+}
+form .button{
+    margin-top: 30px;
+    overflow: hidden;
+    z-index: 111;
+}
+.button .inner{
+    position : absolute;
+    height: 100%;
+    width : 300%;
+    left: -100%;
+    z-index: -1;
+    transition: all .4s;
+    background: linear-gradient(90deg,violet,rgb(124, 124, 241),violet,blue);
+}
+.button:hover .inner{
+    left: 0;
+}
+
+.button button{
+    width : 100%;
+    height: 100%;
+    border: none;
+    background: none;
+    outline: none;
+    color: white;
+    font-size: 20px;
+    cursor: pointer;
+    font-family: 'Montserrat', sans-serif;
+}
+
+.signup{
+    font-size: 20px;
+    font-family: 'Montserrat', sans-serif;
+}
+.signup p{
+    padding: 10px;
+    margin-top : 10px;
+}
+.signup p a{
+    text-decoration: none;
+}
+.signup p a:hover{
+    color : blue;
+    text-decoration-line: underline;
+}
+.container .auth{
+    margin : 35px 0 20px 0;
+    font-size: 18px;
+    color : grey;
+}
+.links{
+    display:flex;
+    cursor: pointer;
+}
+.github, .google{
+    height : 40px;
+    width:100%;
+    border: 1px solid silver;
+    border-radius: 10px;
+    margin : 0 10px;
+}
+.google i, .google span{
+    color: black;
+} 
+.github:hover{
+    border: 1px solid black;
+    background-color: black;
+    color : white;
+}
+.google:hover{
+    border: 1px solid rgb(248, 60, 60);
+    background-color: rgb(248, 60, 60);
+
+}
+.links i{
+    font-size: 23px;
+    line-height : 40px;
+    margin-left : -90px;
+}
+.links span{
+    position: absolute;
+    font-size : 17px;
+    font-weight: bold;
+    padding-left: 8px;
+    font-family: 'Open Sans', sans-serif;
+}
+.error{
+    width : 90%;
+    margin : 0px auto;
+    padding : 10px;
+    border : 1px solid red;
+    color : #a94442;
+    background : #f2dede;
+    border-radius : 5px;
+    font-size : 18px;
+}
