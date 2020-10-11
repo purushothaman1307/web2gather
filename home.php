@@ -1,0 +1,119 @@
+<?php include('server.php');
+
+    if(empty($_SESSION['username'])){
+        header('location: loginpage.php');
+    }
+
+?>
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
+    <link rel="stylesheet" href="firstPage.css">
+        <link rel="stylesheet" href="home.css">
+    <link rel="stylesheet" href="about.css">
+      <link rel="stylesheet" href="error.scss">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/2.0.2/anime.min.js"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.8.0/angular.js"></script>
+    <script type="text/javascript" src="pro.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/angular-route/1.8.0/angular-route.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/angular-route/1.8.0/angular-route.min.js"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.8.0/angular.min.js"></script>
+    <title>BookEasy -Book Electrician and Plumber</title>
+
+</head>
+<body ng-app="bookEasy" ng-controller ="booking"> 
+        <div class="container-fluid p-0">
+            <nav class="navbar navbar-expand-lg">
+              <img src="https://cdn.glitch.com/c02ec8de-ed4d-4c95-828a-58f2d3c7e617%2Fimg.png?v=1595942207225" class="img">
+              <span class="navbar-brand" href="#">{{title}}</span>
+              <button class="navbar-toggler" type="button" data-aos="slide-left" data-aos-duration="1000" data-toggle="collapse" 
+              data-target="#navbarNav" aria-controls="navbarNav" aria-label="Toggle navigation">
+                  <i class="fa fa-bars" aria-hidden="true"></i>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarNav">
+                    <div class="mr-auto"></div>
+                  <ul class="navbar-nav" data-aos="slide-down" data-aos-duration="1000" >
+                    <li class="nav-item">
+                      <a class="nav-link active" href="firstPage.html#!/home">HOME</a>
+                    </li>
+                    <li class="nav-item">
+                      <a class="nav-link" href="firstPage.html#!/services">SERVICES</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="firstPage.html#!/about-us">ABOUT</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">HELP</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">FEEDBACK</a>
+                    </li>
+                    <li class="nav-item dropdown">
+        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><?php echo $_SESSION['username']?></a>
+        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+          <a class="dropdown-item" href="#">profile</a>
+          <div class="dropdown-divider"></div>
+          <a class="dropdown-item" href="home.html">logout</a>
+        </div>
+      </li>
+                  </ul>
+                </div>
+              </nav>
+        </div>    
+</div>
+  <div class="container-fluid p-0 m-0" ng-view></div>
+  <br><br>
+    <footer>
+      <div class="container-fluid p-0">
+        <div class="row text-left">
+          <div class="col-lg-8 col-sm-12 col-md-12" data-aos="slide-right" data-aos-duration="500">
+            <h4 class="news">{{news.name}}</h4>
+            <p class="sub text-light">{{news.Des}}</p>
+            <form class="form">
+              <div class="col pl-0">
+                <div class="input-group pr-5">
+                  <input type="text" class="form-control bg-dark text-white" placeholder="Email">
+                  <span class="input-group-prepend">
+                    <span class="input-group-text">
+                      <a href="#"><i class="fa fa-arrow-right" aria-hidden="true"></i></a>
+                    </span>
+                  </span>
+                </div>
+              </div>
+            </form>
+          </div>
+          <div class="col-lg-4 col-sm-12 col-md-12" data-aos="fade-down" data-aos-duration="500">
+            <h4 class="follow">{{follow.name}}</h4>
+            <p class="sub text-light">{{follow.Des}}</p>
+            <div class="column">
+              <a href="#"><i class="fa fa-facebook-square" aria-hidden="true"></i></a>
+              <a href="#"><i class="fa fa-instagram" aria-hidden="true"></i></a>
+              <a href="#"><i class="fa fa-linkedin-square" aria-hidden="true"></i></a>
+              <a href="#"><i class="fa fa-youtube-square" aria-hidden="true"></i></a>
+              <a href="#"><i class="fa fa-telegram" aria-hidden="true"></i></a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </footer>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script>
+  AOS.init({
+    duration : 1700,
+    offset : 60,
+    easing : "ease-in-out"
+  });
+  </script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js" integrity="sha512-bLT0Qm9VnAYZDflyKcBaQ2gg0hSYNQrJ8RilYldYQ1FxQYoCLtUjuuRuZo+fjqhx/qtq/1itJ0C2ejDxltZVFg==" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js" integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous"></script>
+    </body>
+</html>
